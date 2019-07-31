@@ -4,5 +4,8 @@
     
     <v:String x:Key="Protocol_Title">Создание протокола</v:String>
     <v:String x:Key="Configuration">Настройки</v:String>
+    <v:String x:Key="Configuration_Base">Базовые настройки</v:String>
+    <v:String x:Key="Language">Язык приложения</v:String>
+    <v:String x:Key="Save_button">Сохранить</v:String>
 
 </ResourceDictionary>

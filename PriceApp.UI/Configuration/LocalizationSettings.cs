@@ -11,7 +11,7 @@
 
     public partial class LocalizationSettings : Application
     {
-        private static List<CultureInfo> cultures = new List<CultureInfo>()
+        private static List<CultureInfo> cultures = new List<CultureInfo>();
         public static event EventHandler LanguageChanged;
 
 

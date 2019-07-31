@@ -4,5 +4,8 @@
 
     <v:String x:Key="Protocol_Title">Protocol making</v:String>
     <v:String x:Key="Configuration">Configuration</v:String>
+    <v:String x:Key="Configuration_Base">Base settings</v:String>
+    <v:String x:Key="Language">Application language</v:String>
+    <v:String x:Key="Save_button">Save</v:String>
 
 </ResourceDictionary>

@@ -2,7 +2,9 @@
 {
     #region Usings
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
+    using System.Linq;
     using System.Windows;
     using Caliburn.Micro;
     using PriceApp.UI.Configuration;
@@ -10,49 +12,36 @@
 
     public class SettingsViewModel : Screen
     {
+        private string _selectedCulture;
+        public List<string> Cultures => LocalizationSettings.Cultures.Select(x => x.DisplayName).ToList();
+
+        public string SelectedCulture
+        {
+            get => _selectedCulture;
+            set
+            {
+                _selectedCulture = value;
+                NotifyOfPropertyChange(nameof(SelectedCulture));
+            }
+        }
+
         public SettingsViewModel()
         {
-            LocalizationSettings.LanguageChanged += LanguageChanged;
+            CultureInfo currentCulture = LocalizationSettings.Culture;
 
-            CultureInfo currLang = LocalizationSettings.Language;
-
-            //Заполняем меню смены языка:
-            menuLanguage.Items.Clear();
-            foreach (var lang in LocalizationSettings.Languages)
-            {
-                MenuItem menuLang = new MenuItem();
-                menuLang.Header = lang.DisplayName;
-                menuLang.Tag = lang;
-                menuLang.IsChecked = lang.Equals(currLang);
-                menuLang.Click += ChangeLanguageClick;
-                menuLanguage.Items.Add(menuLang);
-            }
+            
         }
 
-        private void LanguageChanged(Object sender, EventArgs e)
+        private void LanguageChanged()
         {
             CultureInfo currLang = LocalizationSettings.Language;
 
-            //Отмечаем нужный пункт смены языка как выбранный язык
-            foreach (MenuItem i in menuLanguage.Items)
-            {
-                CultureInfo ci = i.Tag as CultureInfo;
-                i.IsChecked = ci != null && ci.Equals(currLang);
-            }
+            
         }
 
-        private void ChangeLanguageClick(Object sender, EventArgs e)
+        public void SaveSettings()
         {
-            MenuItem mi = sender as MenuItem;
-            if (mi != null)
-            {
-                CultureInfo lang = mi.Tag as CultureInfo;
-                if (lang != null)
-                {
-                    LocalizationSettings.Language = lang;
-                }
-            }
-
+          
         }
 
     }
