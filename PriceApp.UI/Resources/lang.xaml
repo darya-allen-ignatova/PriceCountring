@@ -7,5 +7,13 @@
     <v:String x:Key="Configuration_Base">Базовые настройки</v:String>
     <v:String x:Key="Language">Язык приложения</v:String>
     <v:String x:Key="Save_button">Сохранить</v:String>
+    <v:String x:Key="Provider">Наименование поставщика</v:String>
+    <v:String x:Key="FullPrepayment">Полная предоплата</v:String>
+    <v:String x:Key="FullPostpayment">Полная отсрочка</v:String>
+    <v:String x:Key="Mixed">Частичная предоплата/отсрочка</v:String>
+    <v:String x:Key="PartlyPrepayment">Двучастная предоплата</v:String>
+    <v:String x:Key="PaymentType">Тип оплаты</v:String>
+    <v:String x:Key="Price">Цена предложения</v:String>
+    <v:String x:Key="Delete_button">Удалить</v:String>
 
 </ResourceDictionary>

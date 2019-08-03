@@ -12,8 +12,6 @@
     public partial class LocalizationSettings : Application
     {
         private static List<CultureInfo> cultures = new List<CultureInfo>();
-        public static event EventHandler LanguageChanged;
-
 
         public static List<CultureInfo> Cultures => cultures;
 
@@ -59,8 +57,6 @@
                 {
                     Current.Resources.MergedDictionaries.Add(oldDictionary);
                 }
-                
-                LanguageChanged(Current, new EventArgs());
             }
         }
     }

@@ -3,9 +3,9 @@
     #region Usings
     using System.Windows;
     using Caliburn.Micro;
-    using PriceApp.UI.ProtocolDetails;
+    using PriceApp.UI.ViewModels;
     #endregion
-    
+
     public class Bootstrapper : BootstrapperBase
     {
         public Bootstrapper()

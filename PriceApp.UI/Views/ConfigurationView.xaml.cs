@@ -11,14 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PriceApp.UI.Settings
+namespace PriceApp.UI.Views
 {
     /// <summary>
     /// Логика взаимодействия для SettingsView.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class ConfigurationView : Window
     {
-        public SettingsView()
+        public ConfigurationView()
         {
             InitializeComponent();
         }

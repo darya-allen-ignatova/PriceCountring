@@ -7,13 +7,11 @@ C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\Price
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\bin\Debug\Caliburn.Micro.Platform.xml
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\bin\Debug\System.Windows.Interactivity.xml
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.csprojAssemblyReference.cache
-C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\ProtocolDetails\ProtocolView.g.cs
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\App.g.cs
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI_MarkupCompile.cache
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI_MarkupCompile.lref
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\App.baml
-C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\ProtocolDetails\ProtocolView.baml
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.g.resources
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.Properties.Resources.resources
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.csproj.GenerateResource.cache
@@ -21,3 +19,9 @@ C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\Price
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.csproj.CopyComplete
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.exe
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\PriceApp.UI.pdb
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\Resources\lang.en-US.baml
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\Resources\lang.baml
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\Views\ProtocolView.g.cs
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\Views\ProtocolView.baml
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\Views\ConfigurationView.g.cs
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\obj\Debug\Views\ConfigurationView.baml

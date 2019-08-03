@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.UI\App.xaml
-1-1031116164
+4-1824110632
 
-71540127166
+10159999586
 15959350678
-ProtocolDetails\ProtocolView.xaml;
+Views\ProtocolView.xaml;Resources\lang.en-US.xaml;Resources\lang.xaml;Views\ConfigurationView.xaml;
 
 False
 

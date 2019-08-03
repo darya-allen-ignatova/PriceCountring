@@ -1,11 +1,11 @@
-﻿<Window x:Class="PriceApp.UI.Settings.SettingsView"
+﻿<Window x:Class="PriceApp.UI.Views.ConfigurationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PriceApp.UI.Settings"
+        xmlns:local="clr-namespace:PriceApp.UI.Views"
         mc:Ignorable="d"
-        Title="{DynamicResource Configuration} " Height="450" Width="800">
+        Title="{DynamicResource Configuration}" Height="450" Width="800">
     <Grid Margin="45,30,45,30" >
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,8 +23,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Content="{DynamicResource Language}" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Center"/>
-                <ComboBox x:Name ="Cultures" Grid.Column="1"  Margin="0,56"
-                          SelectedItem="{Binding Path=SelectedCulture, Mode=OneWayToSource}"/>
+                <ComboBox x:Name ="Cultures" Grid.Column="1"  Margin="0,53"
+                          SelectedItem="{Binding Path=SelectedCulture}" DisplayMemberPath="DisplayName"/>
 
             </Grid>
         </GroupBox>

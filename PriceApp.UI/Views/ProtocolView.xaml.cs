@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PriceApp.UI.ProtocolDetails
+namespace PriceApp.UI.Views
 {
     /// <summary>
     /// Логика взаимодействия для ProtocolView.xaml
