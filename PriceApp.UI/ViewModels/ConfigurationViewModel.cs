@@ -1,32 +1,42 @@
 ﻿namespace PriceApp.UI.ViewModels
 {
     #region Usings
-    using System;
-    using System.Collections.Generic;
     using System.Globalization;
-    using System.Linq;
     using System.Windows;
     using Caliburn.Micro;
+    using PriceApp.BusinessLogic.FileService;
+    using PriceApp.BusinessLogic.Models;
     using PriceApp.UI.Configuration;
     #endregion
 
     public class ConfigurationViewModel : Screen
     {
-        private CultureInfo _selectedCulture;
+        private ConfigurationSettings _configurationSettings;
         private BindableCollection<CultureInfo> _cultures = new BindableCollection<CultureInfo>();
         
         public ConfigurationViewModel()
         {
-            Cultures.AddRange(LocalizationSettings.Cultures);
+            _configurationSettings = ConfigurationFileHelper.ReadFromFileConfigurationSettings();
+            _cultures.AddRange(LocalizationSettings.Cultures);
             SelectedCulture = LocalizationSettings.Culture;
+        }
+
+        public ConfigurationSettings ConfigurationSettings
+        {
+            get => _configurationSettings;
+            set
+            {
+                _configurationSettings = value;
+                NotifyOfPropertyChange(nameof(ConfigurationSettings));
+            }
         }
 
         public CultureInfo SelectedCulture
         {
-            get => _selectedCulture;
+            get => _configurationSettings.Culture;
             set
             {
-                _selectedCulture = value;
+                _configurationSettings.Culture = value;
                 NotifyOfPropertyChange(nameof(SelectedCulture));
             }
         }
@@ -37,13 +47,13 @@
             set => _cultures = value;
         }
 
-
-        public void SaveSettings()
+        public void SaveSettingsCommand()
         {
-            LocalizationSettings.Culture = SelectedCulture;
-            //TODO: insert into resources
-            MessageBox.Show("Сохранено");
-        }
+            LocalizationSettings.Culture = ConfigurationSettings.Culture;
+            ConfigurationFileHelper.WriteConfigurationSettings(ConfigurationSettings);
 
+            //TODO: insert into resources
+            MessageBox.Show("Сохранено", "Конфигурация языковой культуры");
+        }
     }
 }

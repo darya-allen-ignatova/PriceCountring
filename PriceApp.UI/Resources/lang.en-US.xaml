@@ -15,5 +15,13 @@
     <v:String x:Key="PaymentType">Type of payment</v:String>
     <v:String x:Key="Price">Offer price</v:String>
     <v:String x:Key="Delete_button">Delete</v:String>
+    <v:String x:Key="RefinancingRate">Refinancing rate</v:String>
+    <v:String x:Key="UserSettings">User settings</v:String>
+    <v:String x:Key="Executor">Executor</v:String>
+    <v:String x:Key="FolderPath">Folder path</v:String>
+    <v:String x:Key="New_button">New</v:String>
+    <v:String x:Key="Place">Place</v:String>
+    <v:String x:Key="ProviderName">Provider name</v:String>
+    <v:String x:Key="ResultPriceAmount">resul price</v:String>
 
 </ResourceDictionary>

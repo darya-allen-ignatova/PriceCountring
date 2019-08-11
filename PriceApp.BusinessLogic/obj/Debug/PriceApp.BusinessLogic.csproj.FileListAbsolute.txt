@@ -1,0 +1,15 @@
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\obj\Debug\PriceApp.BusinessLogic.csprojAssemblyReference.cache
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\obj\Debug\PriceApp.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\PriceApp.BusinessLogic.dll
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\PriceApp.BusinessLogic.pdb
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\obj\Debug\PriceApp.BusinessLogic.dll
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\obj\Debug\PriceApp.BusinessLogic.pdb
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\Caliburn.Micro.dll
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\Caliburn.Micro.Platform.dll
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\Caliburn.Micro.xml
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\Caliburn.Micro.Platform.xml
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\obj\Debug\PriceApp.BusinessLogic.csproj.CopyComplete
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\NLog.dll
+C:\Users\Дарья\Documents\Visual Studio 2017\Projects\PriceCalculation\PriceApp.BusinessLogic\bin\Debug\NLog.xml

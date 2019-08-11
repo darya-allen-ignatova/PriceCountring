@@ -4,19 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PriceApp.UI.Views"
+        xmlns:k="clr-namespace:PriceApp.UI.Converters"
         mc:Ignorable="d"
-        Title="ProtocolView" Height="600" Width="1500">
+        Title="ProtocolView" Height="600" Width="1100" MinHeight="600" MinWidth="1100" Foreground="White" MaxWidth="1100">
+    <Window.Background>
+        <ImageBrush ImageSource="/PriceApp.UI;component/Images/bg.jpeg"/>
+    </Window.Background>
     <Grid>
-        <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="{DynamicResource Configuration}" Name="ConfigurationCommand" FontSize="16"/>
+        <Menu Height="25" VerticalAlignment="Top" BorderBrush="White" Foreground="White">
+            <Menu.Background>
+                <ImageBrush ImageSource="/PriceApp.UI;component/Images/bg.jpeg"/>
+            </Menu.Background>
+            <MenuItem Header="{DynamicResource Configuration}" Name="ConfigurationCommand" FontSize="16" Foreground="White"/>
         </Menu>
         <Grid Margin="10,50,30,30">
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1.5*"/>
-                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -25,9 +34,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource Provider}" FontSize="20"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource Price}" FontSize="20"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Provider}" FontSize="20"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Price}" FontSize="20"/>
             <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.Resources>
+                    <k:EnumBooleanConverter x:Key="enumBooleanConverter" />
+                </Grid.Resources>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -38,18 +50,41 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="{DynamicResource PaymentType}" FontSize="16"/>
-                <RadioButton Grid.Row="1" Grid.Column="0" Content="{DynamicResource FullPrepayment}" FontSize="14"/>
-                <RadioButton Grid.Row="1" Grid.Column="1" Content="{DynamicResource FullPostpayment}" FontSize="14"/>
-                <RadioButton Grid.Row="1" Grid.Column="2" Content="{DynamicResource PartlyPrepayment}" FontSize="14"/>
-                <RadioButton Grid.Row="1" Grid.Column="3" Content="{DynamicResource Mixed}" FontSize="14"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{DynamicResource PaymentType}" FontSize="20"/>
+                <RadioButton GroupName ="SelectedProvider_PaymentType" Grid.Row="1" Grid.Column="0" FontSize="14" Foreground="White" Margin="5,0"
+                             IsChecked = "{Binding SelectedProvider_PaymentType, Mode=TwoWay, Converter={StaticResource enumBooleanConverter}, ConverterParameter=FullPrepayment}">
+                    <RadioButton.Content>
+                        <TextBlock TextWrapping="Wrap" Text="{DynamicResource FullPrepayment}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton GroupName="SelectedProvider_PaymentType" Grid.Row="1" Grid.Column="1" FontSize="14" Foreground="White"  Margin="5,0"
+                             IsChecked = "{Binding SelectedProvider_PaymentType, Mode=TwoWay, Converter={StaticResource enumBooleanConverter}, ConverterParameter=FullPostpayment}">
+                    <RadioButton.Content>
+                        <TextBlock TextWrapping="Wrap" Text="{DynamicResource FullPostpayment}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton GroupName="SelectedProvider_PaymentType" Grid.Row="1" Grid.Column="2"  FontSize="14" Foreground="White"  Margin="5,0"
+                             IsChecked = "{Binding SelectedProvider_PaymentType, Mode=TwoWay, Converter={StaticResource enumBooleanConverter}, ConverterParameter=PartlyPrepayment}">
+                    <RadioButton.Content>
+                        <TextBlock TextWrapping="Wrap" Text="{DynamicResource PartlyPrepayment}"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton GroupName="SelectedProvider_PaymentType" Grid.Row="1" Grid.Column="3" FontSize="14" Foreground="White"  Margin="5,0"
+                             IsChecked= "{Binding SelectedProvider_PaymentType, Mode=TwoWay, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Mixed}">
+                    <RadioButton.Content>
+                        <TextBlock TextWrapping="Wrap" Text="{DynamicResource Mixed}"/>
+                    </RadioButton.Content>
+                </RadioButton>
             </Grid>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="293"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="293" Grid.Row="1"/>
+            <TextBox Name ="SelectedProvider_Name" Grid.Column="1" Height="27" TextAlignment="Right" FontSize="18px"
+                     Margin="10,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+            <TextBox Name ="SelectedProvider_Price" Grid.Column="1" Height="28" TextAlignment="Right" FontSize="18px"
+                     Margin="10,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.Row="1"/>
             <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -57,22 +92,39 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0"  Content="{Binding FirstPercentage}"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="137"/>
-                <Label Grid.Row="1" Grid.Column="0"  Content="{Binding FirstDayAmount}"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="137" Grid.Row="1"/>
+                <TextBlock Grid.Row="0" Grid.Column="0"  Text="{Binding FirstDayAmount}"/>
+                <TextBox Name="SelectedProvider_FirstDayAmount" Grid.Column="1" Grid.Row="0" 
+                         Height="25" TextAlignment="Right" FontSize="18px"/>
+                <TextBlock Grid.Row="1" Grid.Column="0"  Text="{Binding  SecondDayAmount }"/>
+                <TextBox Name="SelectedProvider_SecondDayAmount" Grid.Column="1" Height="25" 
+                         Grid.Row="1" TextAlignment="Right" FontSize="18px"/>
 
+                <TextBlock Grid.Row="0" Grid.Column="2"  Text="{Binding FirstPercentage}"/>
+                <TextBox Name="SelectedProvider_FirstPercenge" Grid.Column="3" Height="25" 
+                         Grid.Row="0" TextAlignment="Right" FontSize="18px"/>
+                <TextBlock Grid.Row="1" Grid.Column="2"  Text="{Binding FirstDayAmount}"/>
+                <TextBox Name="SelectedProvider_SecondPercenge" Grid.Column="3" Height="25" 
+                         Grid.Row="1" TextAlignment="Right" FontSize="18px"/>
 
-                <Label Grid.Row="0" Grid.Column="2"  Content="{Binding SecondPercentage}"/>
-                <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="137" Grid.Row="0"/>
-
-
-                <Label Grid.Row="1" Grid.Column="2"  Content="{Binding SecondDayAmount}"/>
-                <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="137" Grid.Row="1"/>
+                <Button Name="NewCommand" Grid.Column="0" Grid.Row="4" Content="{DynamicResource New_button}" Margin="0,0,5,0" 
+                        FontSize="16" Height="30" VerticalAlignment="Bottom" Foreground="White" Background="#FF043E5F"/>
+                <Button Name="SaveCommand" Grid.Column="1" Grid.Row="4" Content="{DynamicResource Save_button}" 
+                        FontSize="16" Height="30" VerticalAlignment="Bottom" Foreground="White" Background="#FF043E5F"/>
+                <Button Name="DeleteCommand" Grid.Column="3" Grid.Row="4" Content="{DynamicResource Delete_button}" 
+                        FontSize="16" Height="30" VerticalAlignment="Bottom" Foreground="White" Background="#FF043D5D"/>
             </Grid>
-            <Button Grid.Column="0" Grid.Row="5" Margin="251,47,96,0" Content="{DynamicResource Save_button}" FontSize="16"/>
-            <Button Grid.Column="1" Grid.Row="5" Margin="0,47,94,0" Content="{DynamicResource Delete_button}" HorizontalAlignment="Right" Width="133" FontSize="16"/>
-            <ListBox Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" Margin="20,0,0,0" />
+
+            <ListView Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" Margin="20,0,0,0" 
+                      x:Name="Providers" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      FontSize="16">
+                <ListView.View>
+                    <GridView>
+                    <GridViewColumn Header="{DynamicResource Place}" DisplayMemberBinding="{Binding Path=Place}" Width="55px"/>
+                        <GridViewColumn Header="{DynamicResource ProviderName}" DisplayMemberBinding="{Binding Path=Name}" Width="210px"/>
+                        <GridViewColumn Header="{DynamicResource ResultPriceAmount}" DisplayMemberBinding="{Binding Path=ResultPrice}" Width="60px"/>
+                </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
     </Grid>
 </Window>

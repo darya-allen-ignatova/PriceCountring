@@ -7,6 +7,7 @@
     using System;
     using System.Threading;
     using System.Linq;
+    using PriceApp.BusinessLogic.FileService;
     #endregion
 
     public partial class LocalizationSettings : Application
@@ -15,11 +16,19 @@
 
         public static List<CultureInfo> Cultures => cultures;
 
-        public LocalizationSettings()
+        static LocalizationSettings()
         {
             cultures.Clear();
-            cultures.Add(new CultureInfo("ru-RU"));
-            cultures.Add(new CultureInfo("en_US"));
+            cultures.AddRange(new List<CultureInfo>()
+            {
+                new CultureInfo("ru-RU"),
+                new CultureInfo("en-US")
+            });
+            var culture = ConfigurationFileHelper.GetCulture();
+            if (culture != null)
+            {
+                Culture = culture;
+            }
         }
 
         public static CultureInfo Culture
@@ -51,11 +60,11 @@
                 {
                     int indexOfOldDictionary = Current.Resources.MergedDictionaries.IndexOf(oldDictionary);
                     Current.Resources.MergedDictionaries.Remove(oldDictionary);
-                    Current.Resources.MergedDictionaries.Insert(indexOfOldDictionary, oldDictionary);
+                    Current.Resources.MergedDictionaries.Insert(indexOfOldDictionary, dictionary);
                 }
                 else
                 {
-                    Current.Resources.MergedDictionaries.Add(oldDictionary);
+                    Current.Resources.MergedDictionaries.Add(dictionary);
                 }
             }
         }

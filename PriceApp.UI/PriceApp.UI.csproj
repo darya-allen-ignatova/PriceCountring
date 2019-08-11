@@ -42,9 +42,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.0.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +64,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Configuration\LocalizationSettings.cs" />
+    <Compile Include="Converters\EnumBooleanConverter.cs" />
     <Compile Include="Views\ProtocolView.xaml.cs">
       <DependentUpon>ProtocolView.xaml</DependentUpon>
     </Compile>
@@ -122,6 +120,21 @@
   <ItemGroup>
     <Folder Include="ProtocolDetails\" />
     <Folder Include="Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PriceApp.BusinessLogic\PriceApp.BusinessLogic.csproj">
+      <Project>{621b5e6a-2bf6-47b3-8865-c9e963cd8be7}</Project>
+      <Name>PriceApp.BusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConfigurationFile.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
